@@ -113,22 +113,21 @@ def main(stdscr):
         win2.addstr(height-2,1,str(keychar))
         win2.refresh()
 
-        match intActiveView:
-            case 0:
-                for i in range(intTracks):
-                    ypos=4
-                    xpos=(i*intBtnWidth)+2 #+lside+5
-                    if(i>math.floor((intTracks/2)-1)):
-                        ypos=intBtnHeight+4
-                        xpos=(i-4)*intBtnWidth+2 #+lside+5
-                    btns[i]=win2.derwin(intBtnHeight,intBtnWidth,ypos,xpos)
-                    if(trackstates[i]==1):
-                        btns[i].bkgd(' ',curses.color_pair(intReverse))
-                    else:
-                        btns[i].bkgd(' ',curses.color_pair(intColor))
-                    btns[i].box()
-                    btns[i].addstr(1,1,chr(i+65)+':'+str(chnls[i]))
-                    btns[i].refresh()
+        if intActiveView==0:
+            for i in range(intTracks):
+                ypos=4
+                xpos=(i*intBtnWidth)+2 #+lside+5
+                if(i>math.floor((intTracks/2)-1)):
+                    ypos=intBtnHeight+4
+                    xpos=(i-4)*intBtnWidth+2 #+lside+5
+                btns[i]=win2.derwin(intBtnHeight,intBtnWidth,ypos,xpos)
+                if(trackstates[i]==1):
+                    btns[i].bkgd(' ',curses.color_pair(intReverse))
+                else:
+                    btns[i].bkgd(' ',curses.color_pair(intColor))
+                btns[i].box()
+                btns[i].addstr(1,1,chr(i+65)+':'+str(chnls[i]))
+                btns[i].refresh()
 
         c=stdscr.getch()
         keychar=c

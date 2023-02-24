@@ -14,8 +14,8 @@ def main(stdscr):
         curses.init_pair(2,curses.COLOR_BLACK, curses.COLOR_WHITE)
         curses.init_pair(3,curses.COLOR_RED, curses.COLOR_BLACK)
         curses.init_pair(4,curses.COLOR_BLACK,curses.COLOR_RED)
-        curses.init_pair(5,curses.COLOR_WHITE, curses.COLOR_BLUE)
-        curses.init_pair(6,curses.COLOR_BLUE,curses.COLOR_WHITE)
+        curses.init_pair(5,curses.COLOR_WHITE, curses.COLOR_CYAN)
+        curses.init_pair(6,curses.COLOR_CYAN,curses.COLOR_WHITE)
 
     intMaxcol=curses.COLS
     intMaxrow=curses.LINES
